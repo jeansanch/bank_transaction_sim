@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+.env
+
+# Diretórios de build e cache
+dist/
+build/
+.cache/
+temp/
+
+# Configurações locais de IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos do TypeScript
+*.tsbuildinfo
+
+# Logs gerais do sistema
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Bancos de dados locais
+*.sqlite
+*.sqlite-journal
+
+# Configurações de sistema
+.DS_Store
+Thumbs.db
+
+# Testes e relatórios
+coverage/
+jest/
+.nyc_output/
+
+# Configuração de Docker (caso venha a usar no futuro)
+docker-compose.override.yml
+.dockerignore
