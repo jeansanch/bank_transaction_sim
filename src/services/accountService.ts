@@ -27,4 +27,16 @@ export class AccountService {
         account.balance -= amount;
         return account;
     }
+
+    transfer(fromId: number, toId: number, amount: number): void {
+        const fromAccount = this.getAccount(fromId);
+        const toAccount = this.getAccount(toId);
+        if (fromAccount.balance >= amount) {
+            fromAccount.balance -= amount;
+            toAccount.balance += amount;
+        } else {
+            throw new Error('Insufficient balance');
+        }
+    }
+
 }
