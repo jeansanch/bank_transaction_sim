@@ -4,6 +4,9 @@ export class AccountService {
     private accounts: Account[] = [];
 
     createAccount(balance: number): Account {
+        if (balance < 0 || isNaN(balance)) {
+            throw new Error('Invalid balance. Balance must be a non-negative number.');
+        }
         const account: Account = {
             id: this.accounts.length + 1,
             balance

@@ -5,8 +5,12 @@ const accountService = new AccountService();
 
 export const createAccount = (req: Request, res: Response) => {
     const { balance } = req.body;
-    const account = accountService.createAccount(balance);
-    res.status(201).json(account);
+    try {
+        const account = accountService.createAccount(balance);
+        res.status(201).json(account);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
 };
 
 export const getAccount = (req: Request, res: Response) => {
