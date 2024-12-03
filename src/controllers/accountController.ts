@@ -42,6 +42,9 @@ export const withdraw = (req: Request, res: Response) => {
 
 export const transfer = (req: Request, res: Response) => {
     const { fromId, toId, amount } = req.body;
+    if (fromId === toId) {
+        res.status(400).json({ message: 'Cannot transfer money between the same account' });
+    }
     try {
         accountService.transfer(fromId, toId, amount);
         res.status(200).json({ message: 'Transfer successful' });
