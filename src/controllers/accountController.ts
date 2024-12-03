@@ -13,7 +13,10 @@ export const getAccount = (req: Request, res: Response) => {
     const { id } = req.params;
     const account = accountService.getAccount(Number(id));
     if (account) {
-        res.status(200).json(account);
+        res.status(200).json({
+            message: `You have ${account.balance} in your account.`,
+            account
+        });
     } else {
         res.status(404).json({ message: 'Account not found' });
     }
