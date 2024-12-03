@@ -46,6 +46,11 @@ export const transfer = (req: Request, res: Response) => {
         res.status(400).json({ message: 'Cannot transfer money between the same account' });
     }
     try {
+        const fromAccount = accountService.getAccount(fromId);
+        const toAccount = accountService.getAccount(toId);
+        if (!fromAccount || !toAccount) {
+            res.status(404).json({ message: 'One or both accounts not found' });
+        }
         accountService.transfer(fromId, toId, amount);
         res.status(200).json({ message: 'Transfer successful' });
     } catch (error) {
