@@ -199,3 +199,282 @@
 03-12-2024 21:34:04 - error: Account with id 999 not found
 03-12-2024 21:34:04 - info: Created account with id 15
 03-12-2024 21:34:04 - error: Account with id 999 not found
+03-12-2024 22:09:14 - debug: TEST STARTED - should create an account
+03-12-2024 22:09:14 - info: Created account with id 1
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should create an account
+03-12-2024 22:09:14 - debug: TEST STARTED - should get account details
+03-12-2024 22:09:14 - info: Created account with id 2
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should get account details
+03-12-2024 22:09:14 - debug: TEST STARTED - should deposit money into an account
+03-12-2024 22:09:14 - info: Created account with id 3
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 3
+03-12-2024 22:09:14 - debug: Acquired lock for account 3
+03-12-2024 22:09:14 - info: Deposited 50 to account 3
+03-12-2024 22:09:14 - debug: Released lock for account 3
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should deposit money into an account
+03-12-2024 22:09:14 - debug: TEST STARTED - should withdraw money from an account
+03-12-2024 22:09:14 - info: Created account with id 4
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 4
+03-12-2024 22:09:14 - debug: Acquired lock for account 4
+03-12-2024 22:09:14 - info: Withdrew 30 from account 4
+03-12-2024 22:09:14 - debug: Released lock for account 4
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should withdraw money from an account
+03-12-2024 22:09:14 - debug: TEST STARTED - should transfer money between accounts
+03-12-2024 22:09:14 - info: Created account with id 5
+03-12-2024 22:09:14 - info: Created account with id 6
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 5
+03-12-2024 22:09:14 - debug: Acquired lock for account 5
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 6
+03-12-2024 22:09:14 - debug: Acquired lock for account 6
+03-12-2024 22:09:14 - info: Transferred 20 from account 5 to account 6
+03-12-2024 22:09:14 - debug: Released lock for account 5
+03-12-2024 22:09:14 - debug: Released lock for account 6
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should transfer money between accounts
+03-12-2024 22:09:14 - debug: TEST STARTED - should handle concurrent deposits correctly
+03-12-2024 22:09:14 - info: Created account with id 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 7
+03-12-2024 22:09:14 - debug: Acquired lock for account 7
+03-12-2024 22:09:14 - info: Deposited 10 to account 7
+03-12-2024 22:09:14 - debug: Released lock for account 7
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should handle concurrent deposits correctly
+03-12-2024 22:09:14 - debug: TEST STARTED - should handle concurrent withdrawals correctly
+03-12-2024 22:09:14 - info: Created account with id 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 8
+03-12-2024 22:09:14 - debug: Acquired lock for account 8
+03-12-2024 22:09:14 - info: Withdrew 10 from account 8
+03-12-2024 22:09:14 - debug: Released lock for account 8
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should handle concurrent withdrawals correctly
+03-12-2024 22:09:14 - debug: TEST STARTED - should handle concurrent transfers correctly
+03-12-2024 22:09:14 - info: Created account with id 9
+03-12-2024 22:09:14 - info: Created account with id 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 9
+03-12-2024 22:09:14 - debug: Acquired lock for account 9
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 10
+03-12-2024 22:09:14 - debug: Acquired lock for account 10
+03-12-2024 22:09:14 - info: Transferred 10 from account 9 to account 10
+03-12-2024 22:09:14 - debug: Released lock for account 9
+03-12-2024 22:09:14 - debug: Released lock for account 10
+03-12-2024 22:09:14 - debug: TEST COMPLETED - should handle concurrent transfers correctly
+03-12-2024 22:09:14 - debug: TEST STARTED - should fail to withdraw more money than available
+03-12-2024 22:09:14 - info: Created account with id 11
+03-12-2024 22:09:14 - debug: Trying to acquire lock for account 11
+03-12-2024 22:09:14 - debug: Acquired lock for account 11
+03-12-2024 22:09:14 - error: Insufficient balance
+03-12-2024 22:09:14 - debug: Released lock for account 11
+03-12-2024 22:09:14 - error: Operation failed. Attempt 1 of 3. Error: Insufficient balance
+03-12-2024 22:09:15 - debug: Trying to acquire lock for account 11
+03-12-2024 22:09:15 - debug: Acquired lock for account 11
+03-12-2024 22:09:15 - error: Insufficient balance
+03-12-2024 22:09:15 - debug: Released lock for account 11
+03-12-2024 22:09:15 - error: Operation failed. Attempt 2 of 3. Error: Insufficient balance
+03-12-2024 22:09:16 - debug: Trying to acquire lock for account 11
+03-12-2024 22:09:16 - debug: Acquired lock for account 11
+03-12-2024 22:09:16 - error: Insufficient balance
+03-12-2024 22:09:16 - debug: Released lock for account 11
+03-12-2024 22:09:16 - error: Operation failed. Attempt 3 of 3. Error: Insufficient balance
+03-12-2024 22:09:16 - debug: TEST COMPLETED - should fail to withdraw more money than available
+03-12-2024 22:09:16 - debug: TEST STARTED - should fail to transfer more money than available
+03-12-2024 22:09:16 - info: Created account with id 12
+03-12-2024 22:09:16 - info: Created account with id 13
+03-12-2024 22:09:16 - debug: Trying to acquire lock for account 12
+03-12-2024 22:09:16 - debug: Acquired lock for account 12
+03-12-2024 22:09:16 - debug: Trying to acquire lock for account 13
+03-12-2024 22:09:16 - debug: Acquired lock for account 13
+03-12-2024 22:09:16 - error: Insufficient balance
+03-12-2024 22:09:16 - debug: Released lock for account 12
+03-12-2024 22:09:16 - debug: Released lock for account 13
+03-12-2024 22:09:16 - error: Operation failed. Attempt 1 of 3. Error: Insufficient balance
+03-12-2024 22:09:17 - debug: Trying to acquire lock for account 12
+03-12-2024 22:09:17 - debug: Acquired lock for account 12
+03-12-2024 22:09:17 - debug: Trying to acquire lock for account 13
+03-12-2024 22:09:17 - debug: Acquired lock for account 13
+03-12-2024 22:09:17 - error: Insufficient balance
+03-12-2024 22:09:17 - debug: Released lock for account 12
+03-12-2024 22:09:17 - debug: Released lock for account 13
+03-12-2024 22:09:17 - error: Operation failed. Attempt 2 of 3. Error: Insufficient balance
+03-12-2024 22:09:18 - debug: Trying to acquire lock for account 12
+03-12-2024 22:09:18 - debug: Acquired lock for account 12
+03-12-2024 22:09:18 - debug: Trying to acquire lock for account 13
+03-12-2024 22:09:18 - debug: Acquired lock for account 13
+03-12-2024 22:09:18 - error: Insufficient balance
+03-12-2024 22:09:18 - debug: Released lock for account 12
+03-12-2024 22:09:18 - debug: Released lock for account 13
+03-12-2024 22:09:18 - error: Operation failed. Attempt 3 of 3. Error: Insufficient balance
+03-12-2024 22:09:18 - debug: TEST COMPLETED - should fail to transfer more money than available
+03-12-2024 22:09:18 - debug: TEST STARTED - should fail to deposit to a non-existent account
+03-12-2024 22:09:18 - debug: Trying to acquire lock for account 999
+03-12-2024 22:09:18 - debug: Acquired lock for account 999
+03-12-2024 22:09:18 - error: Account with id 999 not found
+03-12-2024 22:09:18 - debug: Released lock for account 999
+03-12-2024 22:09:18 - error: Operation failed. Attempt 1 of 3. Error: Account not found
+03-12-2024 22:09:19 - debug: Trying to acquire lock for account 999
+03-12-2024 22:09:19 - debug: Acquired lock for account 999
+03-12-2024 22:09:19 - error: Account with id 999 not found
+03-12-2024 22:09:19 - debug: Released lock for account 999
+03-12-2024 22:09:19 - error: Operation failed. Attempt 2 of 3. Error: Account not found
+03-12-2024 22:09:20 - debug: Trying to acquire lock for account 999
+03-12-2024 22:09:20 - debug: Acquired lock for account 999
+03-12-2024 22:09:20 - error: Account with id 999 not found
+03-12-2024 22:09:20 - debug: Released lock for account 999
+03-12-2024 22:09:20 - error: Operation failed. Attempt 3 of 3. Error: Account not found
+03-12-2024 22:09:20 - debug: TEST COMPLETED - should fail to deposit to a non-existent account
+03-12-2024 22:09:20 - debug: TEST STARTED - should fail to withdraw from a non-existent account
+03-12-2024 22:09:20 - debug: Trying to acquire lock for account 999
+03-12-2024 22:09:20 - debug: Acquired lock for account 999
+03-12-2024 22:09:20 - error: Account with id 999 not found
+03-12-2024 22:09:20 - debug: Released lock for account 999
+03-12-2024 22:09:20 - error: Operation failed. Attempt 1 of 3. Error: Account not found
+03-12-2024 22:09:21 - debug: Trying to acquire lock for account 999
+03-12-2024 22:09:21 - debug: Acquired lock for account 999
+03-12-2024 22:09:21 - error: Account with id 999 not found
+03-12-2024 22:09:21 - debug: Released lock for account 999
+03-12-2024 22:09:21 - error: Operation failed. Attempt 2 of 3. Error: Account not found
+03-12-2024 22:09:22 - debug: Trying to acquire lock for account 999
+03-12-2024 22:09:22 - debug: Acquired lock for account 999
+03-12-2024 22:09:22 - error: Account with id 999 not found
+03-12-2024 22:09:22 - debug: Released lock for account 999
+03-12-2024 22:09:22 - error: Operation failed. Attempt 3 of 3. Error: Account not found
+03-12-2024 22:09:22 - debug: TEST COMPLETED - should fail to withdraw from a non-existent account
+03-12-2024 22:09:22 - debug: TEST STARTED - should fail to transfer from a non-existent account
+03-12-2024 22:09:22 - info: Created account with id 14
+03-12-2024 22:09:22 - error: Account with id 999 not found
+03-12-2024 22:09:22 - debug: TEST COMPLETED - should fail to transfer from a non-existent account
+03-12-2024 22:09:22 - debug: TEST STARTED - should fail to transfer to a non-existent account
+03-12-2024 22:09:22 - info: Created account with id 15
+03-12-2024 22:09:22 - error: Account with id 999 not found
+03-12-2024 22:09:22 - debug: TEST COMPLETED - should fail to transfer to a non-existent account

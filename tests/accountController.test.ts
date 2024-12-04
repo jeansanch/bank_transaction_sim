@@ -1,6 +1,7 @@
 import request from 'supertest';
 import express from 'express';
 import accountRoutes from '../src/routes/accountRoutes';
+import log from '../src/utils/logger';
 
 const app = express();
 app.use(express.json());
@@ -11,15 +12,18 @@ describe('Account Controller', () => {
     //Common tests
 
     it('should create an account', async () => {
+        log.debug('TEST STARTED - should create an account');
         const response = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
         expect(response.status).toBe(201);
         expect(response.body).toHaveProperty('id');
         expect(response.body.balance).toBe(100);
+        log.debug('TEST COMPLETED - should create an account');
     });
 
     it('should get account details', async () => {
+        log.debug('TEST STARTED - should get account details');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -31,9 +35,11 @@ describe('Account Controller', () => {
         expect(response.body.account).toHaveProperty('id', accountId);
         expect(response.body.account).toHaveProperty('balance', 100);
         expect(response.body.message).toBe(`You have 100 in your account.`);
+        log.debug('TEST COMPLETED - should get account details');
     });
 
     it('should deposit money into an account', async () => {
+        log.debug('TEST STARTED - should deposit money into an account');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -44,9 +50,11 @@ describe('Account Controller', () => {
             .send({ amount: 50 });
         expect(response.status).toBe(200);
         expect(response.body.balance).toBe(150);
+        log.debug('TEST COMPLETED - should deposit money into an account');
     });
 
     it('should withdraw money from an account', async () => {
+        log.debug('TEST STARTED - should withdraw money from an account');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -57,9 +65,11 @@ describe('Account Controller', () => {
             .send({ amount: 30 });
         expect(response.status).toBe(200);
         expect(response.body.balance).toBe(70);
+        log.debug('TEST COMPLETED - should withdraw money from an account');
     });
 
     it('should transfer money between accounts', async () => {
+        log.debug('TEST STARTED - should transfer money between accounts');
         const createResponse1 = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -83,11 +93,13 @@ describe('Account Controller', () => {
         const toAccountResponse = await request(app)
             .get(`/accounts/${accountId2}`);
         expect(toAccountResponse.body.account.balance).toBe(70);
+        log.debug('TEST COMPLETED - should transfer money between accounts');
     });
 
     //Concurrency tests
 
     it('should handle concurrent deposits correctly', async () => {
+        log.debug('TEST STARTED - should handle concurrent deposits correctly');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -106,9 +118,11 @@ describe('Account Controller', () => {
             .get(`/accounts/${accountId}`);
         expect(response.status).toBe(200);
         expect(response.body.account.balance).toBe(200);
+        log.debug('TEST COMPLETED - should handle concurrent deposits correctly');
     });
 
     it('should handle concurrent withdrawals correctly', async () => {
+        log.debug('TEST STARTED - should handle concurrent withdrawals correctly');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -127,9 +141,11 @@ describe('Account Controller', () => {
             .get(`/accounts/${accountId}`);
         expect(response.status).toBe(200);
         expect(response.body.account.balance).toBe(0);
+        log.debug('TEST COMPLETED - should handle concurrent withdrawals correctly');
     });
 
     it('should handle concurrent transfers correctly', async () => {
+        log.debug('TEST STARTED - should handle concurrent transfers correctly'); 
         const createResponse1 = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -158,11 +174,13 @@ describe('Account Controller', () => {
             .get(`/accounts/${accountId2}`);
         expect(toAccountResponse.status).toBe(200);
         expect(toAccountResponse.body.account.balance).toBe(150);
+        log.debug('TEST COMPLETED - should handle concurrent transfers correctly');
     });
     
     // Tests for failure scenarios
 
     it('should fail to withdraw more money than available', async () => {
+        log.debug('TEST STARTED - should fail to withdraw more money than available');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -173,9 +191,11 @@ describe('Account Controller', () => {
             .send({ amount: 200 });
         expect(response.status).toBe(400);
         expect(response.body.message).toBe('Insufficient balance');
+        log.debug('TEST COMPLETED - should fail to withdraw more money than available');
     });
 
     it('should fail to transfer more money than available', async () => {
+        log.debug('TEST STARTED - should fail to transfer more money than available');
         const createResponse1 = await request(app)
             .post('/accounts')
             .send({ balance: 100 });
@@ -191,25 +211,31 @@ describe('Account Controller', () => {
             .send({ fromId: accountId1, toId: accountId2, amount: 200 });
         expect(response.status).toBe(400);
         expect(response.body.message).toBe('Insufficient balance');
+        log.debug('TEST COMPLETED - should fail to transfer more money than available');
     });
 
     it('should fail to deposit to a non-existent account', async () => {
+        log.debug('TEST STARTED - should fail to deposit to a non-existent account');
         const response = await request(app)
             .post('/accounts/999/deposit')
             .send({ amount: 50 });
         expect(response.status).toBe(404);
         expect(response.body.message).toBe('Account not found');
+        log.debug('TEST COMPLETED - should fail to deposit to a non-existent account');
     });
 
     it('should fail to withdraw from a non-existent account', async () => {
+        log.debug('TEST STARTED - should fail to withdraw from a non-existent account');
         const response = await request(app)
             .post('/accounts/999/withdraw')
             .send({ amount: 50 });
         expect(response.status).toBe(404);
         expect(response.body.message).toBe('Account not found');
+        log.debug('TEST COMPLETED - should fail to withdraw from a non-existent account');
     });
 
     it('should fail to transfer from a non-existent account', async () => {
+        log.debug('TEST STARTED - should fail to transfer from a non-existent account');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 50 });
@@ -220,9 +246,11 @@ describe('Account Controller', () => {
             .send({ fromId: 999, toId: accountId, amount: 50 });
         expect(response.status).toBe(404);
         expect(response.body.message).toBe('One or both accounts not found');
+        log.debug('TEST COMPLETED - should fail to transfer from a non-existent account');
     });
 
     it('should fail to transfer to a non-existent account', async () => {
+        log.debug('TEST STARTED - should fail to transfer to a non-existent account');
         const createResponse = await request(app)
             .post('/accounts')
             .send({ balance: 50 });
@@ -233,5 +261,6 @@ describe('Account Controller', () => {
             .send({ fromId: accountId, toId: 999, amount: 50 });
         expect(response.status).toBe(404);
         expect(response.body.message).toBe('One or both accounts not found');
+        log.debug('TEST COMPLETED - should fail to transfer to a non-existent account');
     });
 });
