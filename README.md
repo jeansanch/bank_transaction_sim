@@ -2,7 +2,7 @@
 
 For the README in portuguese, please refer to [README_PT-BR](./README_PT-BR.md)
 
-This is a simulator of bank transactions. Due to it being a just a Demo, it won't have the correct structure that a software like this should have. But I feel necessary to document how the correct structure should look like as far as I know.
+This is a simulator of bank transactions. Due to it being just a Demo, it won't have the correct structure that a software like this should have. But I feel necessary to document how the correct structure should look like as far as I know.
 
 ## Correct Structure
 
