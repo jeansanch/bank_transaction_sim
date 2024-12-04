@@ -36,7 +36,11 @@ export class AccountService {
 
 
     async getAccount(id: number): Promise<Account> {
-        return this.accounts.find((account) => account.id === id);
+        const account = this.accounts.find((account) => account.id === id);
+        if (!account) {
+            throw new Error('Account not found');
+        }
+        return account;
     }
 
     async deposit(id: number, amount: number): Promise<Account> {
@@ -54,6 +58,9 @@ export class AccountService {
         await this.acquireLock(id);
         try {
             const account = await this.getAccount(id);
+            if (account.balance < amount) {
+                throw new Error('Insufficient balance');
+            }
             account.balance -= amount;
             return account;
         } finally {

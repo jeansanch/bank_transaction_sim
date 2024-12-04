@@ -15,14 +15,14 @@ export const createAccount = async (req: Request, res: Response) => {
 
 export const getAccount = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const account = await accountService.getAccount(Number(id));
-    if (account) {
+    try {
+        const account = await accountService.getAccount(Number(id));
         res.status(200).json({
             message: `You have ${account.balance} in your account.`,
             account
         });
-    } else {
-        res.status(404).json({ message: 'Account not found' });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
     }
 };
 
@@ -33,7 +33,11 @@ export const deposit = async (req: Request, res: Response) => {
         const account = await accountService.deposit(Number(id), amount);
         res.status(200).json(account);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        if (error.message === 'Account not found') {
+            res.status(404).json({ message: error.message });
+        } else {
+            res.status(400).json({ message: error.message });
+        }
     }
 };
 
@@ -44,7 +48,11 @@ export const withdraw = async (req: Request, res: Response) => {
         const account = await accountService.withdraw(Number(id), amount);
         res.status(200).json(account);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        if (error.message === 'Account not found') {
+            res.status(404).json({ message: error.message });
+        } else {
+            res.status(400).json({ message: error.message });
+        }
     }
 };
 
@@ -62,6 +70,10 @@ export const transfer = async (req: Request, res: Response) => {
         await accountService.transfer(fromId, toId, amount);
         res.status(200).json({ message: 'Transfer successful' });
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        if (error.message === 'Account not found') {
+            res.status(404).json({ message: 'One or both accounts not found' });
+        } else {
+            res.status(400).json({ message: error.message });
+        }
     }
 };
