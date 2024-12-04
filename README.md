@@ -1,5 +1,7 @@
 # bank_transaction_sim
 
+For the README in portuguese refer to [README_PT-BR](./README_PT-BR.md)
+
 This is a simulator of bank transactions. Due to it being a just a Demo, it won't have the correct structure that a software like this should have. But I feel necessary to document how the correct structure should look like as far as I know.
 
 ## Correct Structure
@@ -15,7 +17,11 @@ This is a simulator of bank transactions. Due to it being a just a Demo, it won'
 
 - Preferably in a container.
 
+### Code
 
+- SHOULD HAVE a better structure of logging. i.e.: Separate the data in something like a JSON with (Function, account_id, message). So we could use something like JSONata to filter the values.
+
+- SHOULDN'T retry on common failures like "Account not found" but throw right away, however it is being used to simulate these type of failures.
 
 ## Usage
 
@@ -99,3 +105,14 @@ Example cURL Command:
 ```bash
 curl -X POST http://localhost:3000/accounts/transfer -H "Content-Type: application/json" -d "{\"fromId\": 1, \"toId\": 2, \"amount\": 20}"
 ```
+
+## Testing
+
+The tests should show the "use cases" requested. They are all self explanatory.
+
+## Disclaimer about the development
+
+- First of all, yes, I've used AI to help understand small details on how could I make this. I have previous knowledge with API's. AI's shouldn't be a problem if we use it as a tool to help us understand how everything works. But I'm still doing some things here for the first time.
+
+- I haven't used AI on everything.
+
