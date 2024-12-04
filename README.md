@@ -108,7 +108,7 @@ curl -X POST http://localhost:3000/accounts/transfer -H "Content-Type: applicati
 
 ## Testing
 
-The tests should show the "use cases" requested. They are all self explanatory.
+The tests should show the "use cases" requested. They are all self explanatory, logs were also added to help understand their use case situations.
 
 ## Disclaimer about the development
 

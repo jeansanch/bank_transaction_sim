@@ -98,9 +98,9 @@ curl -X POST http://localhost:3000/accounts/1/withdraw -H "Content-Type: applica
 curl -X POST http://localhost:3000/accounts/transfer -H "Content-Type: application/json" -d "{\"fromId\": 1, \"toId\": 2, \"amount\": 20}"
 ```
 
-## Testes
+## Testes/Casos de uso
 
-Os testes devem demonstrar os "casos de uso" solicitados. Todos eles são autoexplicativos.
+Os testes devem demonstrar os "casos de uso" solicitados. Todos eles são autoexplicativos, logs também foram adicionados para auxiliar na compreensão das situações possíveis.
 
 ## Observações sobre o Desenvolvimento
 
