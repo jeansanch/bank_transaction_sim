@@ -28,7 +28,7 @@ Este é um simulador de transações bancárias. Por ser apenas uma demonstraç�
 Para iniciar o servidor, execute o seguinte comando:
 
 ```sh
-npx ts-node src/server.ts
+npx ts-node server.ts
 ```
 
 ### Criar uma Conta
