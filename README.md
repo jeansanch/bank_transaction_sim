@@ -30,7 +30,7 @@ This is a simulator of bank transactions. Due to it being just a Demo, it won't 
 To start the server, run the following command:
 
 ```sh
-npx ts-node src/server.ts
+npx ts-node server.ts
 ```
 
 ### Create an Account
